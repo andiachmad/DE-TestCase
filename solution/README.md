@@ -1,6 +1,7 @@
 ## Deskripsi 
 Solusi ini digunakan untuk menganalisis event log Change Data Capture (CDC) dari tiga sumber data (accounts, cards, savings_accounts) dalam format JSON. 
 
+```
 project/
 ├── data/ # Folder data JSON, dipisah jadi 3 subfolder
 │ ├── accounts/ # File JSON data account
@@ -13,6 +14,7 @@ project/
 │ ├── requirements.txt # Libraries yang diperlukan
 │ ├── deploy.sh # Script otomatis build & run di Docker
 │ └── README.md # Dokumen ini (harus di folder ini)
+```
 
 ## Penjelasan Solusi
 Penjelasan Metode dan Alur Analisis
