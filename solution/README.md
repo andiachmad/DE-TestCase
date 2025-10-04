@@ -66,7 +66,12 @@ Step-by-Step
 ```
 cd solution
 docker build -t cdc-analysis .
-docker run --rm -v "${PWD}\..\data:/app/data:ro" cdc-analysis
+
+## Jalankan container dengan mount folder data
+ex : docker run --rm -v "F:\...\testcase\DE-TestCase\data:/app/data:ro" cdc-analysis
+
+> Catatan: Ganti path `F:\...\testcase\DE-TestCase\data` sesuai lokasi folder data berada
+
 ```
 
 ## Output
