@@ -84,6 +84,4 @@ ex : docker run --rm -v "F:\...\testcase\DE-TestCase\data:/app/data:ro" cdc-anal
 
     Gabungan semua event dari tiga tabel, diurutkan berdasarkan waktu dan urutan event.
 
-3. Transaction Analysis
-
-    Ringkasan transaksi yang mengubah saldo savings (set.balance) dan kredit kartu (set.credit_used).
+3. Untuk Case Nomor 3, Terjawab pada case.py untuk diskusi penjelasanya terkait nomor 2
