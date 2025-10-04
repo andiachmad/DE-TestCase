@@ -4,16 +4,16 @@ Solusi ini digunakan untuk menganalisis event log Change Data Capture (CDC) dari
 ```
 project/
 ├── data/ # Folder data JSON, dipisah jadi 3 subfolder
-│ ├── accounts/ # File JSON data account
-│ ├── cards/ # File JSON data kartu
-│ └── savings_accounts/ # File JSON saldo tabungan
-├── solution/ # Tempat file utama dan Docker
+│ ├── accounts/ 
+│ ├── cards/ 
+│ └── savings_accounts/ 
+├── solution/ 
 │ ├── case.py # Script utama Anda (harus disubmit)
-│ ├── case.ipynb # Notebook untuk eksperimen (opsional)
+│ ├── case.ipynb 
 │ ├── Dockerfile # Buat container
 │ ├── requirements.txt # Libraries yang diperlukan
 │ ├── deploy.sh # Script otomatis build & run di Docker
-│ └── README.md # Dokumen ini (harus di folder ini)
+│ └── README.md 
 ```
 
 ## Penjelasan Solusi
@@ -44,7 +44,7 @@ Penjelasan Metode dan Alur Analisis
 
     - Menentukan path data secara otomatis (Docker atau lokal).
 
-    - Menampilkan tabel individual (Case 1).
+    - Menampilkan tabular table (Case 1).
 
     - Menampilkan tabel gabungan (Case 2).
 
@@ -53,26 +53,25 @@ Penjelasan Metode dan Alur Analisis
 
 ## Cara menjalankan Docker Local
 
-Prasyarat
+- Docker sudah terinstall
 
-    - Docker sudah terinstall
-
-    - Pastikan Docker sudah berjalan, agar bisa bisa terhubung ke Docker Engine
+- Pastikan Docker sudah berjalan, agar bisa bisa terhubung ke Docker Engine
     
-    - Folder data/ dengan subfolder accounts/, cards/, savings_accounts/
+- Folder data/ dengan subfolder accounts/, cards/, savings_accounts/
 
-    - File JSON tersedia di masing-masing subfolder
+- File JSON tersedia di masing-masing subfolder
 
 Step-by-Step
 
-    1. Masuk ke folder solution : cd solution
-
-    2. Jalankan deployment : chmod +x deploy.sh
-                            ./deploy.sh
+```
+cd solution
+docker build -t cdc-analysis .
+docker run --rm -v "${PWD}\..\data:/app/data:ro" cdc-analysis
+```
 
 ## Output
 
-1. Tabel Individual
+1. Tabular Table
 
     Menampilkan semua event dari masing-masing tabel (accounts, cards, savings_accounts).
 
