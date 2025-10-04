@@ -55,6 +55,8 @@ Prasyarat
 
     - Docker sudah terinstall
 
+    - Pastikan Docker sudah berjalan, agar bisa bisa terhubung ke Docker Engine
+    
     - Folder data/ dengan subfolder accounts/, cards/, savings_accounts/
 
     - File JSON tersedia di masing-masing subfolder
