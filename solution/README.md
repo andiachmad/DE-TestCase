@@ -84,4 +84,26 @@ ex : docker run --rm -v "F:\...\testcase\DE-TestCase\data:/app/data:ro" cdc-anal
 
     Gabungan semua event dari tiga tabel, diurutkan berdasarkan waktu dan urutan event.
 
-3. Untuk Case Nomor 3, Terjawab pada case.py untuk diskusi penjelasanya terkait nomor 2
+3. Transaction Analysis (Case 3)
+
+   **Lokasi Analisis:** File `solution/case.py`
+
+## Hasil Analsis
+
+| No | Timestamp       | Jenis   | Nilai Transaksi |
+|----|-----------------|---------|-----------------|
+| 1  | 1577955600000   | Savings | 15000.0         |
+| 2  | 1578313800000   | Card    | 12000.0         |
+| 3  | 1578420000000   | Card    | 19000.0         |
+| 4  | 1578648600000   | Savings | 40000.0         |
+| 5  | 1578654000000   | Card    | 0.0             |
+| 6  | 1578654000000   | Savings | 21000.0         |
+| 7  | 1579361400000   | Card    | 37000.0         |
+| 8  | 1579505400000   | Savings | 33000.0         |
+
+**Ringkasan:**
+- **Total transaksi**: 8 transaksi
+- **Transaksi Savings**: 4 transaksi (perubahan saldo tabungan)
+- **Transaksi Card**: 4 transaksi (perubahan penggunaan kredit)
+- **Total perubahan saldo savings**: +-109,000.0
+- **Total perubahan credit card**: +-68,000.0 (sebelum pelunasan)
